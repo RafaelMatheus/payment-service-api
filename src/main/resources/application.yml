@@ -1,0 +1,31 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017
+      database: payment-management
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: b2b
+server:
+  port: 8082
+
+transaction:
+  rabbit:
+    queue-name: transaction-queue
+    exchange-name: transaction-exchange
+    routing-key: transaction-routing
+    dead-letter-routing-key: dead-letter-routing
+    dead-letter-exchange: transaction-dead-letter-exchange
+    dead-letter-queue-name: transaction-dead-letter-queue
+
+payment:
+  rabbit:
+    queue-name: payment-queue
+    exchange-name: payment-exchange
+    routing-key: payment-routing
+    dead-letter-routing-key: payment-dead-letter-routing
+    dead-letter-exchange: payment-dead-letter-exchange
+    dead-letter-queue-name: payment-dead-letter-queue
