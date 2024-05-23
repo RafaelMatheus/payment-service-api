@@ -13,6 +13,7 @@ services:
       - RABBITMQ_DEFAULT_VHOST=b2b
 
   mongodb:
+    platform: linux/x86_64
     image: mongo:3.6.1
     container_name: mongodb-wallet
     environment:
